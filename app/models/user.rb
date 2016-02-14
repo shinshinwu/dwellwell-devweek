@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
                        :uniqueness => true,
                        :format => { :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   has_secure_password
+
+  def completed_profile?
+    qualification.present?
+  end
 end

@@ -1,0 +1,91 @@
+<div class="pure-g application-form">
+  <div class="pure-u-1 pure-u-md-1-5">
+  </div>
+  <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+    <%= form_for @user, html: {class: "pure-form pure-form-stacked"} do |f| %>
+      <fieldset>
+
+        <div class="pure-g">
+          <div class="pure-u-1">
+            <legend>Let's get working on the application! First, let's start with the basics</legend>
+          </div>
+
+          <div class="pure-u-1-2">
+            <%= f.label :first_name %>
+          </div>
+          <div class="pure-u-1-2">
+            <%= f.text_field :first_name %>
+          </div>
+
+          <div class="pure-u-1-2">
+            <%= f.label :last_name %>
+          </div>
+          <div class="pure-u-1-2">
+            <%= f.text_field :last_name %>
+          </div>
+
+          <div class="pure-u-1-2">
+            <%= f.label :gender %>
+          </div>
+          <div class="pure-u-1-2">
+            <div class="pure-u-1-2">
+              <div class="pure-u-1-2">
+                <%= f.radio_button :gender, 'female' %>
+              </div>
+              <div class="pure-u-1-2">
+                <%= label :gender, 'Female' %>
+              </div>
+            </div>
+            <div class="pure-u-1-2">
+              <div class="pure-u-1-2">
+                <%= f.radio_button :gender, 'male' %>
+              </div>
+              <div class="pure-u-1-2">
+                <%= label :gender, 'Male' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1-2">
+            <%= f.label :dob, "Date of Birth" %>
+          </div>
+          <div class="pure-u-1-2">
+            <%= f.date_select :dob, start_year: Date.current.year - 120, end_year: Date.current.year %>
+          </div>
+
+          <div class="pure-u-1-2">
+            <%= f.label :ssn, "Social Security Number" %>
+          </div>
+          <div class="pure-u-1-2">
+            <%= f.text_field :ssn %>
+          </div>
+
+          <div class="pure-u-1-2">
+            <%= f.label :race_id, "Race/Ethnicity" %>
+          </div>
+          <div class="pure-u-1-2">
+            <%= f.select :race_id, options_from_collection_for_select(Race.all, :id, :category), :include_blank => true, :required => true %>
+          </div>
+
+          <div class="pure-u-1-2">
+            <%= f.label :phone_home, "Home Phone" %>
+          </div>
+          <div class="pure-u-1-2">
+            <%= f.text_field :phone_home %>
+          </div>
+
+          <div class="pure-u-1-2">
+            <%= f.label :phone_work, "Work Phone" %>
+          </div>
+          <div class="pure-u-1-2">
+            <%= f.text_field :phone_work %>
+          </div>
+
+          <div class="pure-u-1-3">
+            <%= f.submit "Next", :class => 'pure-button' %>
+          </div>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

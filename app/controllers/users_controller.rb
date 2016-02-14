@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  # before_filter :authenticate_user!, except: [:index, :new]
+  before_filter :authenticate_user!, except: [:index, :new, :create]
+  before_filter :set_user_context, except: [:index, :new, :create]
 
   def index
   end
@@ -9,7 +10,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+  end
+
+  def basic_info
+
   end
 
   def create
@@ -17,7 +21,11 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome to DwellWell!"
-      redirect_to @user
+      if @user.completed_profile?
+        redirect_to @user
+      else
+        redirect_to step1_users_path
+      end
     else
       render 'new'
     end
@@ -29,6 +37,10 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:email, :password)
+  end
+
+  def set_user_context
+    @user = current_user
   end
 
 end

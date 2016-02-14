@@ -215,6 +215,30 @@ a.pure-button-primary {
     margin-top: 50px;
  }
 
+ .application-form {
+    display: block;
+    margin: 0 auto;
+    background-image: image-url("form_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
+.application-form legend {
+    color: white !important;
+    font-size: 22px;
+    font-weight: 100;
+}
+
+.application-form .pure-button {
+    color: white;
+    background-color: #219AFF;
+}
+
+ .application-form label {
+    color: white;
+    font-weight: 100;
+ }
+
 .content-wrapper {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
@@ -269,11 +293,6 @@ a.pure-button-primary {
     body {
         font-size: 16px;
     }
-    /* We want to give the content area some more padding */
-    .content {
-        padding: 1em;
-    }
-
     /* We can align the menu header to the left, but float the
     menu items to the right. */
     .home-menu {
