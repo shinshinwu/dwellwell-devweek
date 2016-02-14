@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	</head>
+	<body style="background-color: #333F50;">
+		<div style="background-color: #FFFFFF; color: #333F50; border: 50px solid #FFFFFF; margin: 50px;">
+			<%=email_image_tag("dwl.png", {style:"width:152px;height:76px;background-color:black;"})%>
+			<p>Hello, <%=@vendor.name%></p>
+<p>You have an inquiry about your property</p>
+
+<p>This was their subject line:</p>
+<p><%=@email_info['msg_subject_txt']%></p>
+
+<p>This was their message:</p>
+<p><%=@email_info['msg_body_txt']%></p>
+
+
+<p>You can reply to this inqury by email your prospective tenant here:</p>
+
+          <%= mail_to @email_link do %>
+            <button style="color:white;background-color:#219AFF;margin-top:10px;border:none;">Contact Property</button>
+          <% end %>
+
+			<p>Sincerely,</p>
+			<p>The DwellWell Team</p>
+		</div>
+	</body>
+</html>

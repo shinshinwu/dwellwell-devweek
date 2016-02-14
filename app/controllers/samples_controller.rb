@@ -94,18 +94,27 @@ end
 		end
 	end
 	
-def for_vendor(inbound__web_hook_object)
+def for_vendor(inbound_web_hook_object)
 	50.times do 
 		print '**'
 	end
-	puts inbound__web_hook_object
+	puts inbound_web_hook_object
+	s = inbound_web_hook_object['masked_from_string']
+	u = inbound_web_hook_object['request_from_email']
+	@vendor = Vendor.find_by_masked_vendor_id(s)
+	@user = User.find_by_email(u)
+	@email = inbound_web_hook_object
+    l = @user.masked_user_id
+    @email_link = l + '@hello.affordablehousingapp.com'
+TransactionMailer.vendor_email(@vendor, @user, @email, @email_link).deliver_now
+
 end
 
-def for_applicant((inbound__web_hook_object))
+def for_applicant((inbound_web_hook_object))
 	50.times do 
 		print '**'
 	end
-	puts inbound__web_hook_object
+	puts inbound_web_hook_object
 end
 
 private

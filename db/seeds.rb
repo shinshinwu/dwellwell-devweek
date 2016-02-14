@@ -24,7 +24,7 @@ agency = Agency.create([
 ])
 
 vendor = Vendor.create([
-  {name: "Happy Housing Development", email: "happy@housing.org",line_1: "​375 Alabama St", line_2: "#300", city: "San Francisco", state: "CA", zipcode: "94110", photo_url: "http://i62.tinypic.com/j6ncyo.jpg"}
+  {name: "Happy Housing Development", email: "marlon@foremanit.com",line_1: "​375 Alabama St", line_2: "#300", city: "San Francisco", state: "CA", zipcode: "94110", photo_url: "http://i62.tinypic.com/j6ncyo.jpg"}
 ])
 
 dwellings = Dwelling.create([
@@ -33,3 +33,4 @@ dwellings = Dwelling.create([
   {vendor_id: 1, name: "St. James Place", line_1: "​3102 Avenue Ave", line_2: "#32", city: "San Francisco", state: "CA", zipcode: "94110", photo_url: "https://assets.pando.com/_versions/2014/01/san-fran-housing_featured.jpg", monthly_rent: 1200},
   {vendor_id: 1, name: "Connecticut Ave", line_1: "​2021 Boulevard Blvd", line_2: "#3", city: "San Francisco", state: "CA", zipcode: "94110", photo_url: "http://ww2.hdnux.com/photos/10/11/33/2135781/5/920x920.jpg", monthly_rent: 1080}
 ])
+
