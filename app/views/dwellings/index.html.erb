@@ -48,7 +48,7 @@
                 <p><%= dwelling.line_1 %></p>
                 <p><%= dwelling.city + ", " + dwelling.state.upcase + " " + dwelling.zipcode %></p>
                 <% if current_user -%>
-                  <%= mail_to "hello@dwellwell.org" do %>
+                  <%= mail_to @emailstring do %>
                     <button style="color:white;background-color:#219AFF;margin-top:10px;border:none;">Contact Property</button>
                   <% end %>
                 <% end -%>
