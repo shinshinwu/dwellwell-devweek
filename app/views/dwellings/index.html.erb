@@ -1,0 +1,58 @@
+<div id="page">
+  <div id="header" style="background-color: #333F50;margin-top:75px;">
+    <div id="userDiv1">
+      <select>
+        <option value="1bed">1</option>
+        <option value="2bed">2</option>
+        <option value="3bed">3</option>
+        <option value="4bed">4</option>
+      </select>
+    </div>
+    <span class="headerLink1" href="" style="margin-left: 3px"> Bedrooms</span>
+    <span class="headerLink1" href=""><input type="checkbox" name="#" value="TRUE" checked="true"> Only homes I qualify for</span>
+    <div id="userDiv">
+      <span id="username">Sort by</span>
+      <select>
+        <option value="PriceLoHi">Price: Low to High</option>
+        <option value="PriceHiLo">Price: High to Low</option>
+        <option value="Newest">Newest</option>
+        <option value="Nearest">Nearest</option>
+      </select>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div id="infoDiv" style="margin-top:0;">
+      <% @dwellings.each do |dwelling| -%>
+        <div class="pure-u-1">
+          <div class="pure-u-md-9-24">
+          </div>
+          <div class="pure-u-1 pure-u-md-14-24">
+            <div class="info" onclick="showOverlay();">
+            <div class="pure-u-md-9-24">
+              <span>
+                <img src=<%= dwelling.photo_url %> style="width:100%;" />
+              </span>
+            </div>
+            <div class="pure-u-md-14-24">
+              <div>
+                <h3><%= dwelling.name.titleize %></h3>
+                <h4>
+                  <span style="font-size:24px; color: #70AD47">
+                    <%= number_to_currency(@user.monthly_rent) %>
+                  </span>
+                  of
+                  <span style="color: #70AD47">
+                    <%= number_to_currency(dwelling.monthly_rent) %>
+                  </span>for 2 bedrooms
+                </h4>
+                <p><%= dwelling.line_1 %></p>
+                <p><%= dwelling.city + ", " + dwelling.state.upcase + " " + dwelling.zipcode %></p>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      <% end -%>
+    </div>
+  </div>
+</div>
