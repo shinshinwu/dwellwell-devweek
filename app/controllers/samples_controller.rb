@@ -24,11 +24,39 @@ end
 	def inbound_web_hook
 		# puts params
 
-raw_response_object = params['_json'][0]['msys']['relay_message']
+treated_response_hash = params['_json'][0]['msys']['relay_message']
 50.times do 
 print '**' 
 end
-puts raw_response_object
+request_from_email =  treated_response_hash['friendly_from']
+puts request_from_email
+
+50.times do 
+print '**' 
+end
+
+msg_subject_txt = treated_response_hash['content']['subject']
+puts msg_subject_txt
+50.times do 
+print '**' 
+end
+
+msg_body_txt = treated_response_hash['content']['text']
+puts msg_body_txt
+50.times do 
+print '**' 
+end
+
+rcpt_from_email = treated_response_hash['rcpt_to']
+puts rcpt_from_email
+
+50.times do 
+print '**' 
+end
+
+matching_reg_ex_obj = /^[^\@]*/.match(rcpt_from_email)
+masked_from_string = matching_reg_ex_obg.to_s
+puts masked_from_string
 50.times do 
 print '**' 
 end
