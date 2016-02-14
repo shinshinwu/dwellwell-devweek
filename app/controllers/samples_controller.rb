@@ -55,7 +55,7 @@ print '**'
 end
 
 matching_reg_ex_obj = /^[^\@]*/.match(rcpt_from_email)
-masked_from_string = matching_reg_ex_obg.to_s
+masked_from_string = matching_reg_ex_obj.to_s
 puts masked_from_string
 50.times do 
 print '**' 
