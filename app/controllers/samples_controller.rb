@@ -24,7 +24,7 @@ end
 	def inbound_web_hook
 		# puts params
 
-raw_response_object = ['_json'][0]['msys']['relay_message']
+raw_response_object = params['_json'][0]['msys']['relay_message']
 50.times do 
 print '**' 
 end
