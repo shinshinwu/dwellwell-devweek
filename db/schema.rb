@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20160213144122) do
     t.datetime "updated_at"
   end
 
-  create_table "vendor", force: :cascade do |t|
+  create_table "vendors", force: :cascade do |t|
     t.string  "name"
     t.string  "line_1"
     t.string  "line_2"
