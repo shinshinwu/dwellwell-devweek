@@ -1,5 +1,5 @@
 <div id="page">
-  <div id="header" style="background-color: #333F50;margin-top:75px;">
+  <div id="header" style="background-color: #333F50;margin-top:74px;">
     <div id="userDiv1">
       <select>
         <option value="1bed">1</option>
@@ -47,6 +47,11 @@
                 </h4>
                 <p><%= dwelling.line_1 %></p>
                 <p><%= dwelling.city + ", " + dwelling.state.upcase + " " + dwelling.zipcode %></p>
+                <% if current_user -%>
+                  <%= mail_to "hello@dwellwell.org" do %>
+                    <button style="color:white;background-color:#219AFF;margin-top:10px;border:none;">Contact Property</button>
+                  <% end %>
+                <% end -%>
               </div>
             </div>
             </div>
