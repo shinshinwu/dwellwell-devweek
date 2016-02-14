@@ -22,7 +22,18 @@ skip_before_action :verify_authenticity_token, :only => [:inbound_web_hook]
 end
 
 	def inbound_web_hook
-		puts params
+		# puts params
+
+raw_response_object = ['_json'][0]['msys']['relay_message']
+50.times do 
+print '**' 
+end
+puts raw_response_object
+50.times do 
+print '**' 
+end
+
+
 		respond_to do |format|
 			format.html {head :ok, content_type: "text/html"}
 			format.json {head :ok}
