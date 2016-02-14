@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :new]
+  # before_filter :authenticate_user!, except: [:index, :new]
 
   def index
   end
@@ -24,6 +24,11 @@ class UsersController < ApplicationController
   end
 
   def update
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:email, :password)
   end
 
 end

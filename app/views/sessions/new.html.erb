@@ -1,6 +1,6 @@
 <div class="pure-g">
   <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-    <%= form_for(:session, url: login_users_path, html: {class: "pure-form pure-form-stacked"}) do |f| %>
+    <%= form_for(:session, url: {action: "create"}, html: {class: "pure-form pure-form-stacked"}) do |f| %>
       <fieldset>
       <legend>Log In</legend>
 
