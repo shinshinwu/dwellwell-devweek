@@ -24,9 +24,9 @@ end
 	def inbound_web_hook
 		puts params
 		respond_to do |format|
-			format.html format.json {head :ok}
-			format.json {head :ok, content_type: "text/html"}
-			format.xml  { head :ok }
+			format.html {head :ok, content_type: "text/html"}
+			format.json {head :ok}
+			format.xml  {head :ok}
 		end
 	end
 	
