@@ -61,6 +61,24 @@ puts masked_from_string
 print '**' 
 end
 
+case
+	when masked_from_string.match(/vendor/)
+	  50.times do 
+			print '**' 
+		end
+	  puts 'This is a vendor'
+	  # prompt find vendor method
+	when masked_from_string.match(/applicant/)
+	  puts 'This is an applicant'
+		  50.times do 
+				print '**' 
+			end
+	  # prompt find applicant method
+	else
+	  puts 'dunno bro'
+end
+
+
 
 		respond_to do |format|
 			format.html {head :ok, content_type: "text/html"}
