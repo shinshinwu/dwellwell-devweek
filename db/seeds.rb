@@ -20,7 +20,7 @@ races = Race.create([
 ])
 
 agency = Agency.create([
-  {name: "San Francisco Housing Authority", email: "contact@sfha.org", program_name: "Section 8", line_1: "​1815 Egbert Ave", city: "San Francisco", state: "CA", zipcode: "94124", photo_url: "http://cdn.affordablehousingonline.com/HAImages/CA001.jpg"}
+  {name: "San Francisco Housing Authority", email: "contact@sfha.org", program_name: "Section 8", line_1: "​1815 Egbert Ave", city: "San Francisco", state: "CA", zipcode: "94124"}
 ])
 
 vendor = Vendor.create([
