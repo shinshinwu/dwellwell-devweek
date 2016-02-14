@@ -31,7 +31,7 @@
               </li>
             <% else -%>
               <li class="pure-menu-item pure-menu-selected">
-                <a href="#" class="pure-menu-link">Profile</a>
+                <%= link_to "Profile", profile_users_path, class: "pure-menu-link" %>
               </li>
               <li class="pure-menu-item pure-menu-selected">
                 <%= link_to "Logout", logout_users_path, method: "delete", class: "pure-menu-link" %>

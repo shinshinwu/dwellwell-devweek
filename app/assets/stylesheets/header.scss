@@ -1,0 +1,92 @@
+body
+{
+    color: #333F50;
+    font-family: Arial;
+}
+
+a
+{
+    text-decoration: none;
+    color: #219AFF;
+}
+
+    a:hover
+    {
+        color: #333F50;
+    }
+
+#header
+{
+    background-color: #219AFF;
+    height: 50px;
+    display: flex;
+    align-content: center;
+}
+
+    #header #logo
+    {
+        align-self: center;
+    }
+
+        #header #logo img
+        {
+            height: 40px;
+        }
+
+    #header .headerLink
+    {
+        align-self: center;
+        text-decoration: none;
+        color: #FFFFFF;
+        margin-left: 30px;
+        letter-spacing: 1px;
+    }
+
+        #header .headerLink:hover
+        {
+            color: #333F50;
+        }
+
+    #header .headerLink1
+    {
+        align-self: center;
+        text-decoration: none;
+        color: #FFFFFF;
+        margin-left: 30px;
+        letter-spacing: 1px;
+    }
+
+
+    #header #userDiv
+    {
+        flex: 1 1 auto;
+        align-self: center;
+        text-align: right;
+        margin-right: 15px;
+        color: #FFFFFF;
+    }
+
+        #header #userDiv #username:hover
+        {
+            color: #333F50;
+            cursor: pointer;
+        }
+
+    #header #userDiv1
+    {
+        align-self: center;
+        text-align: left;
+        margin-left: 15px;
+        color: #FFFFFF;
+    }
+
+        #header #userDiv1 #username:hover
+        {
+            color: #333F50;
+            cursor: pointer;
+        }
+
+#footer
+{
+    height: 150px;
+}

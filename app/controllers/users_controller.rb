@@ -76,6 +76,7 @@ class UsersController < ApplicationController
   def update_background_info
     @user.attributes = params[:user]
     if @user.save
+      Qualification.create(user_id: @user.id, agency_id: Agency.first.id)
       flash[:success] = "Thanks for your submission!"
       redirect_to profile_users_path
     else

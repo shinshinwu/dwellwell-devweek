@@ -13,9 +13,11 @@
  *= require_tree .
  *= require_self
 
+ //= require reset
  //= require pure-min
  //= require grids-responsive-min
  //= require font-awesome
+ //= require header
  */
 
 * {
@@ -212,7 +214,7 @@ a.pure-button-primary {
  */
 
  .content {
-    margin-top: 50px;
+    margin: 50px 0;
  }
 
  .application-form {
@@ -290,6 +292,101 @@ a.pure-button-primary {
 /* This is the class used for the footer */
 .footer {
     background: #111;
+}
+
+/*CUSTOME STYLES*/
+
+#mainDiv {
+  background-image: image-url("sf.jpg");
+  height: 700px;
+  display: flex;
+}
+
+#mainDiv #shader {
+  background-color: rgba(255, 255, 255, 0.75);
+  height: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+#mainDiv div {
+  width: 500px;
+  align-self: center;
+}
+
+#mainDiv h1 {
+  text-align: center;
+  font-size: 36pt;
+  color: #333F50;
+  margin-bottom: 40px;
+}
+
+#mainDiv h2 {
+  text-align: center;
+  color: #333F50;
+  line-height: 24pt;
+  font-size: 16pt;
+}
+
+#mainDiv #centerer {
+  display: flex;
+  justify-content: center;
+}
+
+#mainDiv #getstarted {
+  background-color: #219AFF;
+  color: #FFFFFF;
+  height: 50px;
+  width: 175px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 25px;
+}
+
+#mainDiv #getstarted:hover {
+  background-color: #333F50;
+}
+
+#mainDiv #getstarted p {
+  align-self: center;
+}
+
+#infoDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+#infoDiv .info {
+  display: flex;
+  align-self: center;
+  width: 700px;
+  margin-top: 100px;
+}
+
+#infoDiv .info img {
+  flex: 1 1 25%;
+  width: 25%;
+  height: 25%;
+}
+
+#infoDiv .info div {
+  flex: 1 1 75%;
+  padding-left: 100px;
+}
+
+#infoDiv .info h3 {
+  font-size: 18pt;
+  margin-bottom: 20px;
+}
+
+#infoDiv .info p {
+  line-height: 18pt;
+}
+
+#centerer a {
+    padding-top: 10px;
 }
 
 /*
