@@ -2,7 +2,7 @@
   <div class="pure-u-1 pure-u-md-1-5">
   </div>
   <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
-    <%= form_for @user, html: {class: "pure-form pure-form-stacked"} do |f| %>
+    <%= form_for @user, url: step1_users_path, method: :post, html: {class: "pure-form pure-form-stacked"} do |f| %>
       <fieldset>
 
         <div class="pure-g">
@@ -28,19 +28,19 @@
             <%= f.label :gender %>
           </div>
           <div class="pure-u-1-2">
-            <div class="pure-u-1-2">
-              <div class="pure-u-1-2">
+            <div class="pure-u-1-3">
+              <div class="pure-u-1-5">
                 <%= f.radio_button :gender, 'female' %>
               </div>
-              <div class="pure-u-1-2">
+              <div class="pure-u-1-3">
                 <%= label :gender, 'Female' %>
               </div>
             </div>
-            <div class="pure-u-1-2">
-              <div class="pure-u-1-2">
+            <div class="pure-u-1-3">
+              <div class="pure-u-1-5">
                 <%= f.radio_button :gender, 'male' %>
               </div>
-              <div class="pure-u-1-2">
+              <div class="pure-u-1-3">
                 <%= label :gender, 'Male' %>
               </div>
             </div>
@@ -49,8 +49,8 @@
           <div class="pure-u-1-2">
             <%= f.label :dob, "Date of Birth" %>
           </div>
-          <div class="pure-u-1-2">
-            <%= f.date_select :dob, start_year: Date.current.year - 120, end_year: Date.current.year %>
+          <div class="pure-u-1-2 date">
+            <%= f.date_select :dob, start_year: Date.current.year - 120, end_year: Date.current.year - 18%>
           </div>
 
           <div class="pure-u-1-2">
@@ -71,14 +71,14 @@
             <%= f.label :phone_home, "Home Phone" %>
           </div>
           <div class="pure-u-1-2">
-            <%= f.text_field :phone_home %>
+            <%= f.telephone_field :phone_home %>
           </div>
 
           <div class="pure-u-1-2">
             <%= f.label :phone_work, "Work Phone" %>
           </div>
           <div class="pure-u-1-2">
-            <%= f.text_field :phone_work %>
+            <%= f.telephone_field :phone_work %>
           </div>
 
           <div class="pure-u-1-3">

@@ -13,7 +13,7 @@ races = Race.create([
   {category: "Asian"},
   {category: "Asian and White"},
   {category: "American Indian or Alaska Native"},
-  {category: "American Indian/Alaska Native and Black/African American"},
+  {category: "American Indian/Alaska Native and African American"},
   {category: "American Indian or Alaska Native and White "},
   {category: "Native Hawaiian or Other Pacific Islander"},
   {category: "Hispanic/Latino"}

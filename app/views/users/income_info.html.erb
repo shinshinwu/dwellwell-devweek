@@ -1,0 +1,48 @@
+<div class="pure-g application-form">
+  <div class="pure-u-1 pure-u-md-1-5">
+  </div>
+  <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+    <%= form_for @user, url: step2_users_path, method: :post, html: {class: "pure-form pure-form-stacked"} do |f| %>
+      <fieldset>
+
+        <div class="pure-g">
+          <div class="pure-u-1">
+            <legend>Next, some financial information. Don't worry, we only share this with your local public housing agency</legend>
+          </div>
+
+          <div class="pure-u-1-2">
+            <%= f.label :monthly_income %>
+          </div>
+          <div class="pure-u-1-2">
+            <%= f.number_field :monthly_income, placeholder: '$' %>
+          </div>
+
+          <div class="pure-u-1-2">
+            <%= f.label :source_of_income %>
+          </div>
+          <div class="pure-u-1-2">
+            <%= f.text_field :source_of_income %>
+          </div>
+
+          <div class="pure-u-1-2">
+            <%= f.label :monthly_rent %>
+          </div>
+          <div class="pure-u-1-2">
+            <%= f.number_field :monthly_rent, placeholder: '$' %>
+          </div>
+
+          <div class="pure-u-1-2">
+            <%= f.label :estimated_utilities %>
+          </div>
+          <div class="pure-u-1-2">
+            <%= f.number_field :estimated_utilities, placeholder: '$' %>
+          </div>
+
+          <div class="pure-u-1-3">
+            <%= f.submit "Next", :class => 'pure-button' %>
+          </div>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

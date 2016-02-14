@@ -26,7 +26,7 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean    :is_mobility_impared
       t.boolean    :is_hearing_impared
       t.boolean    :is_sight_impared
-      t.boolean    :claim_disablity
+      t.boolean    :claim_disability
       t.boolean    :has_hud_violation
       t.boolean    :lived_in_ph_before
       t.boolean    :has_criminal_activity

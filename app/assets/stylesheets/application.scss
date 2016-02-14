@@ -218,20 +218,30 @@ a.pure-button-primary {
  .application-form {
     display: block;
     margin: 0 auto;
+    min-height: 750px;
     background-image: image-url("form_background.png");
     background-repeat: no-repeat;
     background-size: cover;
  }
 
+.application-form .date,
+.application-form #user_dob_li,
+.application-form #user_dob_2i,
+.application-form #user_dob_3i {
+    display: inherit;
+}
+
 .application-form legend {
     color: white !important;
     font-size: 22px;
     font-weight: 100;
+    text-align: center;
 }
 
 .application-form .pure-button {
     color: white;
     background-color: #219AFF;
+    margin-top: 25px;
 }
 
  .application-form label {

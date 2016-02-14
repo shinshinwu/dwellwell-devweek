@@ -1,0 +1,191 @@
+<div class="pure-g application-form">
+  <div class="pure-u-1 pure-u-md-1-5">
+  </div>
+  <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+    <%= form_for @user, url: step4_users_path, method: :post, html: {class: "pure-form pure-form-stacked"} do |f| %>
+      <fieldset>
+
+        <div class="pure-g">
+          <div class="pure-u-1">
+            <legend>Almost there! Few more questions about any your and your household's background</legend>
+          </div>
+
+          <div class="pure-u-1">
+            <%= f.label :is_veteran, "Are you a veteran?" %>
+          </div>
+          <div class="pure-u-1">
+            <div class="pure-u-1-5">
+            </div>
+            <div class="pure-u-1-3">
+              <div class="pure-u-1-5">
+                <%= f.radio_button :is_veteran, 1 %>
+              </div>
+              <div class="pure-u-1-3">
+                <%= label :is_veteran, 'Yes' %>
+              </div>
+            </div>
+            <div class="pure-u-1-3">
+              <div class="pure-u-1-5">
+                <%= f.radio_button :is_veteran, 0 %>
+              </div>
+              <div class="pure-u-1-3">
+                <%= label :is_veteran, 'No' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1">
+            <%= f.label :is_service_man, "Is someone in your family a veteran or a serviceman?" %>
+          </div>
+          <div class="pure-u-1">
+            <div class="pure-u-1-5">
+            </div>
+            <div class="pure-u-1-3">
+              <div class="pure-u-1-5">
+                <%= f.radio_button :is_service_man, 1 %>
+              </div>
+              <div class="pure-u-1-3">
+                <%= label :is_service_man, 'Yes' %>
+              </div>
+            </div>
+            <div class="pure-u-1-3">
+              <div class="pure-u-1-5">
+                <%= f.radio_button :is_service_man, 0 %>
+              </div>
+              <div class="pure-u-1-3">
+                <%= label :is_service_man, 'No' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1">
+            <%= label :is_mobility_impared, 'In order to find you the right home, does anyone in your household have' %>
+          </div>
+          <div class="pure-u-1">
+            <div class="pure-u-1-5">
+            </div>
+            <div class="pure-u-1-3">
+              <div class="pure-u-1-5">
+                <%= f.check_box :is_mobility_impared %>
+              </div>
+              <div class="pure-u-2-3">
+                <%= label :is_mobility_impared, 'Mobility Imparement' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1">
+            <div class="pure-u-1-5">
+            </div>
+            <div class="pure-u-1-3">
+              <div class="pure-u-1-5">
+                <%= f.check_box :is_hearing_impared %>
+              </div>
+              <div class="pure-u-2-3">
+                <%= label :is_hearing_impared, 'Hearing Imparement' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1">
+            <div class="pure-u-1-5">
+            </div>
+            <div class="pure-u-1-3">
+              <div class="pure-u-1-5">
+                <%= f.check_box :is_sight_impared %>
+              </div>
+              <div class="pure-u-2-3">
+                <%= label :is_sight_impared, 'Sight Imparement' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1">
+            <div class="pure-u-1-5">
+            </div>
+            <div class="pure-u-1-3">
+              <div class="pure-u-1-5">
+                <%= f.check_box :claim_disability %>
+              </div>
+              <div class="pure-u-2-3">
+                <%= label :claim_disability, 'Claims Disability' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1">
+            <%= label :has_hud_violation, 'Please check yes if any of below items applies to you' %>
+          </div>
+          <div class="pure-u-1">
+            <div class="pure-u-1-24">
+            </div>
+            <div class="pure-u-22-24">
+              <div class="pure-u-1-24">
+                <%= f.check_box :has_hud_violation %>
+              </div>
+              <div class="pure-u-22-24">
+                <%= label :has_hud_violation, 'Have violated a previous family obligation with a HUD program' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1">
+            <div class="pure-u-1-24">
+            </div>
+            <div class="pure-u-22-24">
+              <div class="pure-u-1-24">
+                <%= f.check_box :lived_in_ph_before %>
+              </div>
+              <div class="pure-u-22-24">
+                <%= label :lived_in_ph_before, 'Have previously lived in public housing or section 8 housing in any city' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1">
+            <div class="pure-u-1-24">
+            </div>
+            <div class="pure-u-22-24">
+              <div class="pure-u-1-24">
+                <%= f.check_box :has_criminal_activity %>
+              </div>
+              <div class="pure-u-22-24">
+                <%= label :has_criminal_activity, 'Have engaged in use/possession of drugs or violent criminal acitivity' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1">
+            <div class="pure-u-1-24">
+            </div>
+            <div class="pure-u-22-24">
+              <div class="pure-u-1-24">
+                <%= f.check_box :owe_money_to_ha %>
+              </div>
+              <div class="pure-u-22-24">
+                <%= label :owe_money_to_ha, 'Owe money to a public housing authority' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1">
+            <div class="pure-u-1-24">
+            </div>
+            <div class="pure-u-22-24">
+              <div class="pure-u-1-24">
+                <%= f.check_box :is_sex_offender %>
+              </div>
+              <div class="pure-u-22-24">
+                <%= label :is_sex_offender, 'One of household member subject to a lifetime registration requirement under a state sex offender program' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1-3">
+            <%= f.submit "Next", :class => 'pure-button' %>
+          </div>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>
