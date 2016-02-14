@@ -23,9 +23,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string     :phone_work
       t.boolean    :is_veteran
       t.boolean    :is_service_man
-      t.boolean    :is_mobility_impared
-      t.boolean    :is_hearing_impared
-      t.boolean    :is_sight_impared
+      t.boolean    :is_mobility_impaired
+      t.boolean    :is_hearing_impaired
+      t.boolean    :is_sight_impaired
       t.boolean    :claim_disability
       t.boolean    :has_hud_violation
       t.boolean    :lived_in_ph_before

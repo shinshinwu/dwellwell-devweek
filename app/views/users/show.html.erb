@@ -1,1 +1,218 @@
-hello!
+<div class="pure-g">
+  <div class="pure-u-1-24">
+  </div>
+  <div class="pure-u-22-24">
+    <div id="profileDiv">
+      <h1>Hello, Mustachioed Hero</h1>
+      <div id="dashDiv">
+        <span id="youPay">You pay</span>
+        <div id="barDiv">
+          <span class="bar" id="barYou"><%= number_to_currency(@user.monthly_rent) %></span>
+          <span class="bar" id="barTotal"><%= number_to_currency(@user.qualification.voucher_amount) %></span>
+          <span class="bar" id="barMax">$250.00</span>
+        </div>
+        <p>You are responsible for <span id="percent" class="green">30%</span> of your monthly rent</p>
+        <p>Your total rent is <span id="total" class="green">$1,150.00</span> every month</p>
+        <p>You qualify for a monthly rent up to <span id="qualify" class="green"><%= number_to_currency(@user.qualification.qualified_rent_amount) %></span></p>
+      </div>
+    </div>
+    <div id="infoDiv">
+      <div class="pure-u-1">
+        <div class="pure-u-1 pure-u-md-11-24">
+          <div class="section">
+            <h2>Personal Information<a href="">Update</a></h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Email</td>
+                  <td><%= @user.email %></td>
+                </tr>
+                <tr>
+                  <td>First Name</td>
+                  <td><%= @user.first_name.titleize %></td>
+                </tr>
+                <tr>
+                  <td>Last Name</td>
+                  <td><%= @user.last_name.titleize %></td>
+                </tr>
+                <tr>
+                  <td>Gender</td>
+                  <td><%= @user.gender.titleize %></td>
+                </tr>
+                <tr>
+                  <td>Date of Birth</td>
+                  <td><%= @user.dob.to_s %></td>
+                </tr>
+                <tr>
+                  <td>Social Security Number</td>
+                  <td>***-**-<%= @user.ssn[6..-1] %></td>
+                </tr>
+                <tr>
+                  <td>Race/Ethnicity</td>
+                  <td><%= @user.race.category %></td>
+                </tr>
+                <tr>
+                  <td>Home Phone</td>
+                  <td><%= @user.phone_home %></td>
+                </tr>
+                <tr>
+                  <td>Work Phone</td>
+                  <td><%= @user.phone_work %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-11-24">
+          <div class="section">
+            <h2>Financial Information<a href="">Update</a></h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Monthly Income</td>
+                  <td><%= number_to_currency(@user.monthly_income) %></td>
+                </tr>
+                <tr>
+                  <td>Source of Income</td>
+                  <td><%= @user.source_of_income %></td>
+                </tr>
+                <tr>
+                  <td>Monthly Rent</td>
+                  <td><%= number_to_currency(@user.monthly_rent) %></td>
+                </tr>
+                <tr>
+                  <td>Estimated Utilities</td>
+                  <td><%= number_to_currency(@user.estimated_utilities) %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1">
+        <div class="pure-u-1 pure-u-md-11-24">
+          <div class="section">
+            <h2>Household Members' Information<a href="">Update</a></h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td>First Name</td>
+                  <td><%= @user.dependents.first.first_name.titleize %></td>
+                </tr>
+                <tr>
+                  <td>Last Name</td>
+                  <td><%= @user.dependents.first.last_name.titleize %></td>
+                </tr>
+                <tr>
+                  <td>Gender</td>
+                  <td><%= @user.dependents.first.gender.titleize %></td>
+                </tr>
+                <tr>
+                  <td>Date of Birth</td>
+                  <td><%= @user.dependents.first.dob.to_s %></td>
+                </tr>
+                <tr>
+                  <td>Social Security Number</td>
+                  <td>***-**-<%= @user.dependents.first.ssn[6..-1] %></td>
+                </tr>
+                <td>Monthly Income</td>
+                  <td><%= number_to_currency(@user.dependents.first.monthly_income) %></td>
+                </tr>
+                <tr>
+                  <td>Source of Income</td>
+                  <td><%= @user.dependents.first.source_of_income %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-11-24">
+          <div class="section">
+            <h2>Household Information<a href="">Update</a></h2>
+            <table>
+              <tbody>
+                <% if @user.is_veteran -%>
+                  <tr>
+                    <td>Veteran (You)</td>
+                    <td></td>
+                  </tr>
+                <% end -%>
+                <% if @user.is_service_man -%>
+                  <tr>
+                    <td>Verteran/Serviceman</td>
+                    <td></td>
+                  </tr>
+                <% end -%>
+                <% if @user.is_mobility_impaired -%>
+                  <tr>
+                    <td>Mobility Impaired</td>
+                    <td></td>
+                  </tr>
+                <% end -%>
+                <% if @user.is_hearing_impaired -%>
+                  <tr>
+                    <td>Hearing Impaired</td>
+                    <td></td>
+                  </tr>
+                <% end -%>
+                <% if @user.is_sight_impaired -%>
+                  <tr>
+                    <td>Sight Impaired</td>
+                    <td></td>
+                  </tr>
+                <% end -%>
+                <% if @user.claim_disability -%>
+                  <tr>
+                    <td>Claiming Disability</td>
+                    <td></td>
+                  </tr>
+                <% end -%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1">
+        <div class="pure-u-1 pure-u-md-11-24">
+          <div class="section">
+            <h2>Other Information<a href="">Update</a></h2>
+            <table>
+              <tbody>
+                <% if @user.has_hud_violation -%>
+                  <tr>
+                    <td>HUD Violation</td>
+                    <td></td>
+                  </tr>
+                <% end -%>
+                <% if @user.lived_in_ph_before -%>
+                  <tr>
+                    <td>Lived in Public Housing Before</td>
+                    <td></td>
+                  </tr>
+                <% end -%>
+                <% if @user.has_criminal_activity -%>
+                  <tr>
+                    <td>Criminal Activity</td>
+                    <td></td>
+                  </tr>
+                <% end -%>
+                <% if @user.owe_money_to_ha -%>
+                  <tr>
+                    <td>Owe Money to PHA</td>
+                    <td></td>
+                  </tr>
+                <% end -%>
+                <% if @user.is_sex_offender -%>
+                  <tr>
+                    <td>Registered Sex Offender</td>
+                    <td></td>
+                  </tr>
+                <% end -%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

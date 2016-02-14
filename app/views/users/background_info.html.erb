@@ -59,30 +59,17 @@
           </div>
 
           <div class="pure-u-1">
-            <%= label :is_mobility_impared, 'In order to find you the right home, does anyone in your household have' %>
+            <%= label :is_mobility_impaired, 'In order to find you the right home, does anyone in your household have' %>
           </div>
           <div class="pure-u-1">
             <div class="pure-u-1-5">
             </div>
             <div class="pure-u-1-3">
               <div class="pure-u-1-5">
-                <%= f.check_box :is_mobility_impared %>
+                <%= f.check_box :is_mobility_impaired %>
               </div>
               <div class="pure-u-2-3">
-                <%= label :is_mobility_impared, 'Mobility Imparement' %>
-              </div>
-            </div>
-          </div>
-
-          <div class="pure-u-1">
-            <div class="pure-u-1-5">
-            </div>
-            <div class="pure-u-1-3">
-              <div class="pure-u-1-5">
-                <%= f.check_box :is_hearing_impared %>
-              </div>
-              <div class="pure-u-2-3">
-                <%= label :is_hearing_impared, 'Hearing Imparement' %>
+                <%= label :is_mobility_impaired, 'Mobility Imparement' %>
               </div>
             </div>
           </div>
@@ -92,10 +79,23 @@
             </div>
             <div class="pure-u-1-3">
               <div class="pure-u-1-5">
-                <%= f.check_box :is_sight_impared %>
+                <%= f.check_box :is_hearing_impaired %>
               </div>
               <div class="pure-u-2-3">
-                <%= label :is_sight_impared, 'Sight Imparement' %>
+                <%= label :is_hearing_impaired, 'Hearing Imparement' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pure-u-1">
+            <div class="pure-u-1-5">
+            </div>
+            <div class="pure-u-1-3">
+              <div class="pure-u-1-5">
+                <%= f.check_box :is_sight_impaired %>
+              </div>
+              <div class="pure-u-2-3">
+                <%= label :is_sight_impaired, 'Sight Imparement' %>
               </div>
             </div>
           </div>

@@ -389,6 +389,106 @@ a.pure-button-primary {
     padding-top: 10px;
 }
 
+/*USER PROFILE PAGE*/
+
+#profileDiv {
+  padding-top: 100px;
+}
+
+#profileDiv h1 {
+  font-size: 24pt;
+  margin-bottom: 80px;
+}
+
+#profileDiv #youPay {
+  display: inline-block;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 172.5px;
+}
+
+#profileDiv #barDiv {
+  margin-bottom: 50px;
+  display: flex;
+  text-align: center;
+  display: flex;
+}
+
+#profileDiv #barDiv .bar {
+  display: inline-block;
+  line-height: 50px;
+  font-size: 18pt;
+}
+
+#profileDiv #barDiv #barYou {
+  background-color: #70AD47;
+  color: #FFFFFF;
+  border: 1px solid #70AD47;
+  width: 172.5px;
+}
+
+#profileDiv #barDiv #barTotal {
+  background-color: #E2F0D9;
+  color: #70AD47;
+  border: 1px solid #70AD47;
+  margin-left: -1px;
+  width: 402.5px;
+}
+
+#profileDiv #barDiv #barMax {
+  background-color: #FFFFFF;
+  color: #333F50;
+  border: 1px solid #70AD47;
+  margin-left: -1px;
+  width: 125px;
+}
+
+#profileDiv #dashDiv p {
+  line-height: 48pt;
+  font-size: 16pt;
+}
+
+#profileDiv #dashDiv .green {
+  color: #70AD47;
+  font-size: 28pt;
+}
+
+#infoDiv {
+  margin-top: 100px;
+}
+
+#infoDiv .section {
+  margin-top: 100px;
+}
+
+#infoDiv .section h2 {
+  color: #219AFF;
+  font-size: 16pt;
+  margin-bottom: 10px;
+}
+
+#infoDiv .section h2 a {
+  background-color: #219AFF;
+  color: #FFFFFF;
+  padding: 5px 10px;
+  font-size: 10pt;
+  margin-left: 10px;
+}
+
+#infoDiv .section h2 a:hover{
+  background-color: #333F50;
+}
+
+#infoDiv .section tr {
+  line-height: 18pt;
+}
+
+#infoDiv .section td:first-child {
+  text-transform: uppercase;
+  font-size: 10pt;
+  width: 250px;
+}
+
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --
  * On tablets and other medium-sized devices, we want to customize some
