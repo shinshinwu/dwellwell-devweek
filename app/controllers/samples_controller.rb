@@ -1,4 +1,6 @@
 class SamplesController < ApplicationController 
+skip_before_action :verify_authenticity_token, :only => [:inbound_web_hook]
+
 	def index
 	end
 	def actionable
