@@ -20,7 +20,9 @@
         %>
 
         <ul class="pure-menu-list">
-            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Apply For HVC</a></li>
+            <li class="pure-menu-item pure-menu-selected">
+              <%= link_to "Apply for HVC", step1_users_path, class: "pure-menu-link" %>
+            </li>
             <li class="pure-menu-item pure-menu-selected">
               <%= link_to "View Listing", listings_path, class: "pure-menu-link" %>
             </li>

@@ -64,7 +64,7 @@
             <%= f.label :race_id, "Race/Ethnicity" %>
           </div>
           <div class="pure-u-1-2">
-            <%= f.select :race_id, options_from_collection_for_select(Race.all, :id, :category), :include_blank => true, :required => true %>
+            <%= f.select :race_id, options_from_collection_for_select(Race.all, :id, :category, @user.race_id), :required => true %>
           </div>
 
           <div class="pure-u-1-2">
