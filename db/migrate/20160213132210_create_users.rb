@@ -4,9 +4,14 @@ class CreateUsers < ActiveRecord::Migration
       t.references :race
       t.string     :email,              null: false
       t.string     :password_digest
+      t.string     :username
       t.string     :first_name
       t.string     :last_name
-      t.string     :username
+      t.string     :line_1
+      t.string     :line_2
+      t.string     :city
+      t.string     :state
+      t.string     :zipcode
       t.integer    :monthly_income
       t.integer    :monthly_rent
       t.integer    :estimated_utilities
