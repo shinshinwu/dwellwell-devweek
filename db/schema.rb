@@ -34,15 +34,15 @@ ActiveRecord::Schema.define(version: 20160213144122) do
   end
 
   create_table "dependents", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "sex"
-    t.datetime "dob"
-    t.string   "relationship"
-    t.string   "ssn"
-    t.integer  "monthly_income"
-    t.string   "source_of_income"
+    t.integer "user_id"
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "gender"
+    t.date    "dob"
+    t.string  "relationship"
+    t.string  "ssn"
+    t.integer "monthly_income"
+    t.string  "source_of_income"
   end
 
   create_table "dwellings", force: :cascade do |t|
@@ -75,14 +75,18 @@ ActiveRecord::Schema.define(version: 20160213144122) do
     t.string   "email",                 null: false
     t.string   "password_digest"
     t.string   "username"
+    t.string   "gender"
+    t.date     "dob"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "ssn"
     t.string   "line_1"
     t.string   "line_2"
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
     t.integer  "monthly_income"
+    t.string   "source_of_income"
     t.integer  "monthly_rent"
     t.integer  "estimated_utilities"
     t.string   "phone_home"
@@ -92,7 +96,7 @@ ActiveRecord::Schema.define(version: 20160213144122) do
     t.boolean  "is_mobility_impared"
     t.boolean  "is_hearing_impared"
     t.boolean  "is_sight_impared"
-    t.boolean  "claim_disablity"
+    t.boolean  "claim_disability"
     t.boolean  "has_hud_violation"
     t.boolean  "lived_in_ph_before"
     t.boolean  "has_criminal_activity"

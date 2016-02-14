@@ -12,10 +12,18 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :update, :show, :create] do
     collection do
       get '/signup', to: 'users#new'
-      get '/login' => 'sessions#new'
-      post '/login' => 'sessions#create'
-      delete '/logout' => 'sessions#destroy'
+      get '/login', to: 'sessions#new'
+      post '/login', to: 'sessions#create'
+      delete '/logout', to: 'sessions#destroy'
       get '/profile', to: 'users#show'
+      get '/step1', to: 'users#basic_info'
+      post '/step1', to: 'users#update_basic_info'
+      get '/step2', to: 'users#income_info'
+      post '/step2', to: 'users#update_income_info'
+      get '/step3', to: 'users#dependent_info'
+      post '/step3', to: 'users#update_dependent_info'
+      get '/step4', to: 'users#background_info'
+      post '/step4', to: 'users#update_background_info'
     end
   end
 

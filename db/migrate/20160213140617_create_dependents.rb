@@ -4,8 +4,8 @@ class CreateDependents < ActiveRecord::Migration
       t.references :user
       t.string    :first_name
       t.string    :last_name
-      t.string    :sex
-      t.datetime  :dob
+      t.string    :gender
+      t.date      :dob
       t.string    :relationship
       t.string    :ssn
       t.integer   :monthly_income
