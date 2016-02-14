@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160213144122) do
   create_table "agencies", force: :cascade do |t|
     t.string "name"
     t.string "program_name"
+    t.string "email"
     t.string "phone"
     t.string "line_1"
     t.string "line_2"
@@ -60,6 +61,9 @@ ActiveRecord::Schema.define(version: 20160213144122) do
   create_table "qualifications", force: :cascade do |t|
     t.integer "user_id"
     t.integer "agency_id"
+    t.boolean "is_qualified"
+    t.integer "qualified_rent_amount"
+    t.integer "voucher_amount"
   end
 
   create_table "races", force: :cascade do |t|
@@ -70,9 +74,14 @@ ActiveRecord::Schema.define(version: 20160213144122) do
     t.integer  "race_id"
     t.string   "email",                 null: false
     t.string   "password_digest"
+    t.string   "username"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "username"
+    t.string   "line_1"
+    t.string   "line_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
     t.integer  "monthly_income"
     t.integer  "monthly_rent"
     t.integer  "estimated_utilities"
@@ -95,6 +104,7 @@ ActiveRecord::Schema.define(version: 20160213144122) do
 
   create_table "vendors", force: :cascade do |t|
     t.string  "name"
+    t.string  "email"
     t.string  "line_1"
     t.string  "line_2"
     t.string  "city"

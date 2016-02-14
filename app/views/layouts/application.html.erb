@@ -1,14 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>DwellwellDevweek</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DwellWell - Help you to find Affordable Housing">
+  <title>DwellWell - Help you to find Affordable Housing</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= yield :stylesheets %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tag %>
 </head>
 <body>
 
-<%= yield %>
+  <header class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <%= link_to image_tag("dwl.png", width: '100', class: "pure-img-responsive", alt: "logo"),
+          url_for({controller: 'users', action: 'index'}),
+          remote: true
+        %>
 
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Apply For HVC</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">View Listing</a></li>
+            <% unless logged_in? -%>
+              <li class="pure-menu-item pure-menu-selected">
+                <%= link_to "Sign Up", signup_users_path, class: "pure-menu-link" %>
+              </li>
+              <li class="pure-menu-item pure-menu-selected">
+                <%= link_to "Login", login_users_path, class: "pure-menu-link" %>
+              </li>
+            <% else -%>
+              <li class="pure-menu-item pure-menu-selected">
+                <a href="#" class="pure-menu-link">Profile</a>
+              </li>
+            <% end -%>
+        </ul>
+    </div>
+  </header>
+
+  <div class="content">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+
+    <%= yield %>
+  </div>
+
+  <%= yield :javascripts %>
 </body>
 </html>
