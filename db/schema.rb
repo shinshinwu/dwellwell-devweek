@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160213144122) do
+ActiveRecord::Schema.define(version: 20160214200709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,15 +34,15 @@ ActiveRecord::Schema.define(version: 20160213144122) do
   end
 
   create_table "dependents", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "first_name"
-    t.string  "last_name"
-    t.string  "gender"
-    t.date    "dob"
-    t.string  "relationship"
-    t.string  "ssn"
-    t.integer "monthly_income"
-    t.string  "source_of_income"
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "sex"
+    t.datetime "dob"
+    t.string   "relationship"
+    t.string   "ssn"
+    t.integer  "monthly_income"
+    t.string   "source_of_income"
   end
 
   create_table "dwellings", force: :cascade do |t|
@@ -75,28 +75,24 @@ ActiveRecord::Schema.define(version: 20160213144122) do
     t.string   "email",                 null: false
     t.string   "password_digest"
     t.string   "username"
-    t.string   "gender"
-    t.date     "dob"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "ssn"
     t.string   "line_1"
     t.string   "line_2"
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
     t.integer  "monthly_income"
-    t.string   "source_of_income"
     t.integer  "monthly_rent"
     t.integer  "estimated_utilities"
     t.string   "phone_home"
     t.string   "phone_work"
     t.boolean  "is_veteran"
     t.boolean  "is_service_man"
-    t.boolean  "is_mobility_impaired"
-    t.boolean  "is_hearing_impaired"
-    t.boolean  "is_sight_impaired"
-    t.boolean  "claim_disability"
+    t.boolean  "is_mobility_impared"
+    t.boolean  "is_hearing_impared"
+    t.boolean  "is_sight_impared"
+    t.boolean  "claim_disablity"
     t.boolean  "has_hud_violation"
     t.boolean  "lived_in_ph_before"
     t.boolean  "has_criminal_activity"
@@ -104,6 +100,7 @@ ActiveRecord::Schema.define(version: 20160213144122) do
     t.boolean  "is_sex_offender"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "masked_user_id"
   end
 
   create_table "vendors", force: :cascade do |t|
@@ -115,7 +112,8 @@ ActiveRecord::Schema.define(version: 20160213144122) do
     t.string  "state"
     t.string  "zipcode"
     t.string  "photo_url"
-    t.boolean "is_active", default: true
+    t.boolean "is_active",        default: true
+    t.string  "masked_vendor_id"
   end
 
 end
