@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get '/samples' => 'samples#index', as: :sample
   post '/samples' => 'samples#actionable', as: :sample_request
+  post '/inbound' => 'samples#inbound_web_hook', as: :inbound
 
   resources :users, only: [:new, :update, :show, :create] do
     collection do
