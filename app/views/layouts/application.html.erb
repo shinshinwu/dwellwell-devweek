@@ -22,8 +22,18 @@
         <ul class="pure-menu-list">
             <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Apply For HVC</a></li>
             <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">View Listing</a></li>
-            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Sign Up</a></li>
-            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Log In</a></li>
+            <% unless logged_in? -%>
+              <li class="pure-menu-item pure-menu-selected">
+                <%= link_to "Sign Up", signup_users_path, class: "pure-menu-link" %>
+              </li>
+              <li class="pure-menu-item pure-menu-selected">
+                <%= link_to "Login", login_users_path, class: "pure-menu-link" %>
+              </li>
+            <% else -%>
+              <li class="pure-menu-item pure-menu-selected">
+                <a href="#" class="pure-menu-link">Profile</a>
+              </li>
+            <% end -%>
         </ul>
     </div>
   </header>
