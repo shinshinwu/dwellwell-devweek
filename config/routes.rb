@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'users#index'
 
+  get '/samples' => 'samples#index', as: :sample
+  post '/samples' => 'samples#actionable', as: :sample_request
+
   resources :users, only: [:new, :update, :show, :create] do
     collection do
       get '/signup', to: 'users#new'
@@ -14,6 +17,5 @@ Rails.application.routes.draw do
       get '/profile', to: 'users#show'
     end
   end
-
 
 end
